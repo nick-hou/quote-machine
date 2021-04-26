@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap');
+
+$primary-color: grey;
+$font-stack: 'Raleway', sans-serif;
+
+body {
+  background-color: $primary-color;
+  color: $primary-color;
+  align-items: center;
+}
+
+a {
+  color: $primary-color;
+}
+
+.jumbotron {
+  text-align: center;
+  margin: 25vh 25vw 25vh 25vw;
+  width: 50vw;
+  height: 50vh;
+  padding: 5%;
+}
+
+#quote-text {
+  height: 50%;
+  font: 250% $font-stack;
+  text-align: center;
+}
+#quote-author {
+  height: 25%;
+  font: 150% $font-stack;
+  text-align: right;
+  padding-right: 15px;
+}
+#btn-row {
+  height: 25%;
+  text-align: right;
+  font: 125% $font-stack;
+}
+.fab {
+  font-size: 1.25rem
+}
