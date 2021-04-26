@@ -36,11 +36,16 @@ const colors = [
 function newQuote() {
   const quote = quotes[parseInt(Math.random() * quotes.length)];
   const color = colors[parseInt(Math.random() * colors.length)];
-  $("#quote-text").html(quote.text);
-  $("#quote-author").html(quote.author);
+  $("#text").html(quote.text);
+  $("#author").html(quote.author);
 
-  $("#quote-text").css("color", color);
-  $("#quote-author").css("color", color);
+  const tweetStr = "https://twitter.com/intent/tweet?text=" + quote.text.replace(/ /g, "%20");
+  $("#tweet-quote").attr("href", tweetStr);
+  const tumblrStr = "https://www.tumblr.com/widgets/share/tool?posttype=quote&content=" + encodeURIComponent(quote.text) + "&caption=" + encodeURIComponent(quote.Author) + "&shareSource=tumblr_share_button      '&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button'";
+  $("#tumblr-quote").attr("href", tumblrStr);
+
+  $("#text").css("color", color);
+  $("#author").css("color", color);
   $("body").css("background-color", color);
   $("a").css("color", color);
   $(".button").css("background-color", color);
